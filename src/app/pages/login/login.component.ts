@@ -10,9 +10,11 @@ import {AngularFireAuth} from '@angular/fire/auth';
 export class LoginComponent {
 
   constructor(private afAuth: AngularFireAuth) {
+    afAuth.authState.subscribe(x => console.log(x));
   }
 
   login() {
-    this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider()).then();
+    this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+      .then(() => console.log('Login!'));
   }
 }
