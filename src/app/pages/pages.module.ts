@@ -10,8 +10,10 @@ import {AdminProductsComponent} from './admin/admin-products/admin-products.comp
 import {AdminOrdersComponent} from './admin/admin-orders/admin-orders.component';
 import {ComponentsModule} from '../components/components.module';
 import {FormsModule} from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-
+import {LoginComponent} from './login/login.component';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
 })

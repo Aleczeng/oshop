@@ -14,7 +14,7 @@ import {APP_ROUTES} from './app.routing';
     BrowserModule,
     ComponentsModule,
     PagesModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [],
   bootstrap: [AppComponent]
